@@ -6,9 +6,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-        @include('admin.templates.partials.navbar')
-
-        @include('admin.templates.partials.sidebar')
+        @include('admin.templates.partials.header') @include('admin.templates.partials.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -42,8 +40,7 @@
             <!-- /.content -->
         </div>
 
-        @include('admin.templates.partials.footer')
-        @include('admin.templates.partials.control')
+        @include('admin.templates.partials.footer') @include('admin.templates.partials.control')
     </div>
     <!-- ./wrapper -->
 

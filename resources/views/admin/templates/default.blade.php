@@ -35,7 +35,7 @@
 
             <!-- Main content -->
             <section class="content">
-                @yield('main-content')
+                @yield('content')
             </section>
             <!-- /.content -->
         </div>

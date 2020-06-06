@@ -26,12 +26,6 @@
             if (result.value) {
                 document.getElementById('delete-form').action = href
                 document.getElementById('delete-form').submit()
-
-                Swal.fire(
-                    'Terhapus!',
-                    'Data berhasil dihapus',
-                    'success'
-                )
             }
         })
     })

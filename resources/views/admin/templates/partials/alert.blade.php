@@ -1,5 +1,9 @@
-@if (session('success'))
-<div class="alert alert-success">
-    {{ session('success') }}
-</div>
-@endif
+<script>
+    @if (session('success'))
+        Swal.fire(
+        'success',
+        '{{ session('success') }}',
+        'success'
+        )
+    @endif
+</script>

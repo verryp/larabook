@@ -16,6 +16,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Nama</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                     </table>
@@ -24,6 +25,13 @@
         </div>
     </div>
 </div>
+
+<form method="POST" id="delete-form">
+    @csrf
+    @method('delete')
+
+    <input type="submit" value="hapus" style="display:none">
+</form>
 @endsection
 
 
@@ -37,12 +45,13 @@
                 ajax: '{{ route('author.data') }}',
                 dom: '<"btn-tambah">frtlp',
                 columns: [
-                    { data: 'id'},
+                    { data: 'DT_RowIndex', orderable: false, searchable: false},
                     { data: 'name'},
+                    { data: 'action', align: 'center'}
                 ],
             })
 
-            $('div.btn-tambah').html('<a href="#" class="btn btn-primary mb-n5">Tambah</a>')
+            $('div.btn-tambah').html('<a href="{{ route('author.create') }}" class="btn btn-primary mb-n5">Tambah</a>')
         })
 </script>
 @endpush

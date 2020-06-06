@@ -10,6 +10,10 @@ class DataController extends Controller
 {
     public function authors()
     {
-        return datatables()->eloquent(Author::query())->toJson();
+        $authors = Author::orderBy('id', 'desc');
+        return datatables()->of($authors)
+            ->addColumn('action', 'admin.author.action')
+            ->addIndexColumn()
+            ->toJson();
     }
 }

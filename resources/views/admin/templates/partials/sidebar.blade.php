@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('author.index') }}" class="nav-link">
                         <i class="fas fa-user nav-icon"></i>
                         <p>Penulis</p>
                     </a>

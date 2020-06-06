@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Author;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.author.create');
     }
 
     /**
@@ -35,7 +36,13 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $this->validate($request, [
+        //     'name' => 'require'
+        // ]);
+
+        Author::create($request->only('name'));
+
+        return redirect()->route('author.index');
     }
 
     /**
@@ -55,9 +62,9 @@ class AuthorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Author $author)
     {
-        //
+        return view('admin.author.edit', compact('author'));
     }
 
     /**
@@ -67,9 +74,15 @@ class AuthorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Author $author)
     {
-        //
+        // $this->validate($request, [
+        //     'name' => 'require'
+        // ]);
+
+        $author->update($request->only('name'));
+
+        return redirect()->route('author.index');
     }
 
     /**
@@ -78,8 +91,10 @@ class AuthorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Author $author)
     {
-        //
+        $author->delete();
+
+        return redirect()->route('author.index');
     }
 }

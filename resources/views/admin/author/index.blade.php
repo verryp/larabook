@@ -10,8 +10,10 @@
                 </div>
 
                 <div class="card-body">
-                    <table id="authors-table" class="table table-bordered table-hover">
 
+                    @include('admin.templates.partials.alert')
+
+                    <table id="authors-table" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Id</th>

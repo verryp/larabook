@@ -7,12 +7,32 @@
 </button>
 
 <script>
-    $('button#delete').on('click', function (e) {
+    $('button#delete').on('click', function(e) {
         e.preventDefault()
 
         let href = $(this).attr('href')
 
-        document.getElementById('delete-form').action = href
-        document.getElementById('delete-form').submit()
+        Swal.fire({
+            title: 'Apakah yakin hapus data?',
+            text: "Data yang sudah dihapus tidak bisa dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonColor: '#d33',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Hapus',
+            cancelButtonText: 'Batal',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+                document.getElementById('delete-form').action = href
+                document.getElementById('delete-form').submit()
+
+                Swal.fire(
+                    'Terhapus!',
+                    'Data berhasil dihapus',
+                    'success'
+                )
+            }
+        })
     })
 </script>

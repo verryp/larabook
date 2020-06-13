@@ -40,9 +40,9 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request, [
-        //     'name' => 'require'
-        // ]);
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
 
         Author::create($request->only('name'));
 
@@ -85,9 +85,9 @@ class AuthorController extends Controller
      */
     public function update(Request $request, Author $author)
     {
-        // $this->validate($request, [
-        //     'name' => 'require'
-        // ]);
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
 
         $author->update($request->only('name'));
 

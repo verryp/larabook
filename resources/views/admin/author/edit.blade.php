@@ -6,7 +6,7 @@
         <div class="col-8">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Tambah Penulis</h5>
+                    <h5 class="card-title">Edit Penulis</h5>
                     <p class="card-text">
                         <form action="{{ route('author.update', $author) }}" method="POST">
                             @csrf
@@ -14,8 +14,14 @@
 
                             <div class="form-group">
                                 <label for="name">Nama Penulis</label>
-                                <input type="text" class="form-control" name="name" placeholder="Nama penulis"
-                                    value="{{ $author->name }}">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                                    placeholder="Nama penulis" value="{{ old('name') ?? $author->name }}" required>
+
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="row form-group justify-content-end mr-0">

@@ -11,9 +11,17 @@
                         <form action="{{ route('author.store') }}" method="POST">
                             @csrf
 
-                            <div class="form-group">
+                            <div class="form-group @error('name') has-error has-feedback @enderror">
                                 <label for="name">Nama Penulis</label>
-                                <input type="text" class="form-control" name="name" placeholder="Nama penulis">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                                    placeholder="Nama penulis" value="{{ old('name') }}" required autocomplete="name"
+                                    autofocus>
+
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    {{ $message }}
+                                </span>
+                                @enderror
                             </div>
 
                             <div class="row form-group justify-content-end mr-0">

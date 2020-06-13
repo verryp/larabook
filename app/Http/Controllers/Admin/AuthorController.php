@@ -47,7 +47,7 @@ class AuthorController extends Controller
         Author::create($request->only('name'));
 
         return redirect()
-            ->route('author.index')
+            ->route('authors.index')
             ->with('success', 'Data berhasil ditambah');
     }
 
@@ -92,7 +92,7 @@ class AuthorController extends Controller
         $author->update($request->only('name'));
 
         return redirect()
-            ->route('author.index')
+            ->route('authors.index')
             ->with('success', 'Data berhasil diubah');;
     }
 
@@ -107,7 +107,7 @@ class AuthorController extends Controller
         $author->delete();
 
         return redirect()
-            ->route('author.index')
+            ->route('authors.index')
             ->with('success', 'Data berhasil dihapus');
     }
 }

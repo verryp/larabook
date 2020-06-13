@@ -8,19 +8,19 @@ Breadcrumbs::for('dashboard', function ($trail) {
 });
 
 // Authors
-Breadcrumbs::for('author.index', function ($trail) {
+Breadcrumbs::for('authors.index', function ($trail) {
     $trail->push('Beranda', route('dashboard'));
-    $trail->push('Penulis', route('author.index'));
+    $trail->push('Penulis', route('authors.index'));
 });
 
-Breadcrumbs::for('author.create', function ($trail) {
+Breadcrumbs::for('authors.create', function ($trail) {
     $trail->push('Beranda', route('dashboard'));
-    $trail->push('Penulis', route('author.index'));
-    $trail->push('Tambah', route('author.create'));
+    $trail->push('Penulis', route('authors.index'));
+    $trail->push('Tambah', route('authors.create'));
 });
 
-Breadcrumbs::for('author.edit', function ($trail, $author) {
+Breadcrumbs::for('authors.edit', function ($trail, $author) {
     $trail->push('Beranda', route('dashboard'));
-    $trail->push('Penulis', route('author.index'));
-    $trail->push('Edit', route('author.edit', $author));
+    $trail->push('Penulis', route('authors.index'));
+    $trail->push('Edit', route('authors.edit', $author));
 });

@@ -1,8 +1,8 @@
-<a href="{{ route('author.edit', $model) }}" class="btn btn-info">
+<a href="{{ route('authors.edit', $model) }}" class="btn btn-info">
     <i class="fas fa-edit"></i>
 </a>
 
-<button href="{{ route('author.destroy', $model) }}" class="btn btn-danger" id="delete">
+<button href="{{ route('authors.destroy', $model) }}" class="btn btn-danger" id="delete">
     <i class="fas fa-trash"></i>
 </button>
 

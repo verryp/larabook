@@ -42,7 +42,7 @@
                 processing: true,
                 serverSide: true,
                 info: false,
-                ajax: '{{ route('author.data') }}',
+                ajax: '{{ route('authors.data') }}',
                 dom: '<"btn-tambah">frtlp',
                 columns: [
                     { data: 'DT_RowIndex', orderable: false, searchable: false},
@@ -51,7 +51,7 @@
                 ],
             })
 
-            $('div.btn-tambah').html('<a href="{{ route('author.create') }}" class="btn btn-primary mb-n5">Tambah</a>')
+            $('div.btn-tambah').html('<a href="{{ route('authors.create') }}" class="btn btn-primary mb-n5">Tambah</a>')
         })
 </script>
 @endpush

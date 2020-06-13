@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Edit Penulis</h5>
                     <p class="card-text">
-                        <form action="{{ route('author.update', $author) }}" method="POST">
+                        <form action="{{ route('authors.update', $author) }}" method="POST">
                             @csrf
                             @method("PUT")
 

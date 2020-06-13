@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Tambah Penulis</h5>
                     <p class="card-text">
-                        <form action="{{ route('author.store') }}" method="POST">
+                        <form action="{{ route('authors.store') }}" method="POST">
                             @csrf
 
                             <div class="form-group @error('name') has-error has-feedback @enderror">

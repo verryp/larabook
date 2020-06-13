@@ -37,7 +37,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('books.index') }}" class="nav-link">
                         <i class="fas fa-book nav-icon"></i>
                         <p>Buku</p>
                     </a>
